@@ -77,7 +77,6 @@
     </objects>
     <object>objects\obj_shadeTest</object>
     <object>objects\obj_shadeTest2</object>
-    <object>objects\GitTest1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_charSelect</room>
