@@ -28,7 +28,8 @@
       <sprite>sprites\spr_shadeAttackLeft</sprite>
       <sprite>sprites\spr_shadeRun</sprite>
     </sprites>
-    <sprite>sprites\sprite16</sprite>
+    <sprite>sprites\WALK</sprite>
+    <sprite>sprites\sprite20</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
