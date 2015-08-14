@@ -29,12 +29,15 @@
       <sprite>sprites\spr_shadeRun</sprite>
     </sprites>
     <sprite>sprites\sprite16</sprite>
+    <sprite>sprites\spr_round_light</sprite>
+    <sprite>sprites\sprite18</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_menu.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Arrows">
       <object>objects\obj_nextRoom</object>
@@ -78,6 +81,8 @@
       <object>objects\obj_shadow</object>
       <object>objects\obj_control</object>
     </objects>
+    <object>objects\obj_light</object>
+    <object>objects\obj_light_surfaces</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_charSelect</room>
