@@ -70,20 +70,17 @@
     </objects>
     <objects name="Enemy">
       <object>objects\obj_shade</object>
+      <object>objects\obj_shadeTest</object>
+      <object>objects\obj_shadeTest2</object>
       <object>objects\obj_LOS</object>
     </objects>
     <objects name="Light&amp;Shadow">
       <object>objects\obj_shadow</object>
       <object>objects\obj_control</object>
     </objects>
-    <object>objects\obj_shadeTest</object>
-    <object>objects\obj_shadeTest2</object>
-    <object>objects\GitTest1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_charSelect</room>
-    <room>rooms\rm_test</room>
-    <room>rooms\rm_menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

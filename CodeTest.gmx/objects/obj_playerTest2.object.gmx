@@ -31,7 +31,7 @@
 global.strscore = 10;
 global.strmod = (global.strscore-10)/2;
 
-global.dexscore = 14;
+global.dexscore = 10;
 global.dexmod = (global.dexscore-10)/2;
 
 global.conscore = 14;
@@ -166,7 +166,57 @@ if (keyboard_check(vk_numpad1)){
     //WASD
     global.keyboard = 2;
 }
-
+//Horizontal Movement
+if (global.keyboard == 1) {
+if (keyboard_check(vk_right)) {
+    hspeed = min(5,hspeed+global.dexmod+friction)
+    }
+if (keyboard_check(vk_left)) {
+hspeed = max(-5,hspeed-(global.dexmod+friction))
+}
+}
+if (global.keyboard == 2) {
+if (keyboard_check(ord("D"))) {
+    hspeed = min(10,hspeed+global.dexmod+friction)
+    }
+if (keyboard_check(ord("A"))) {
+hspeed = max(-10,hspeed-(global.dexmod+friction))
+}
+}
+//Movement etc.
+switch (keyboard_key) {
+    case vk_left :
+    case ord("A"):
+    if (place_free(x-global.dexmod, y)) {
+       //x -= global.dexmod;
+       global.left = 1; global.right = 0;
+       image_xscale = -1;
+       }
+       break;
+    case vk_right:
+    case ord("D"):
+     if (place_free(x+global.dexmod, y)) {
+       //x += global.dexmod;
+       global.left = 0; global.right =1;
+       image_xscale = 1;
+       }
+       break; 
+       }
+//Jumping
+if (!place_free(x, y+1)) &amp;&amp; place_free(x,y-1) &amp;&amp; keyboard_check_pressed(vk_space) {
+    vspeed = -9;
+}
+//Gravity
+if(place_free(x,y+1)) {
+    gravity = .75;
+        if(vspeed &gt;= 10){
+            vspeed =10;
+    }
+  
+} else {
+    gravity =0; 
+}
+   
 
 /////////////////////////////////////////////////////////////////////////
 /// Check for ledge grab state
@@ -192,27 +242,7 @@ if (falling &amp;&amp; wasnt_wall &amp;&amp; is_wall) {
     //state = ledge_grab_state;
 
 ///////////////////////////////////////////////////////////////////////////
-if (keyboard_check(vk_right)) {
-    hspeed = min(5,hspeed+global.dexmod+friction)
-    }
-if (keyboard_check(vk_left)) {
-hspeed = max(-5,hspeed-(global.dexmod+friction))
-}
-//Jumping
-if (!place_free(x, y+1)) &amp;&amp; place_free(x,y-1) &amp;&amp; keyboard_check_pressed(vk_space) {
-    vspeed = -9;
-}
-//Gravity
-if(place_free(x,y+1)) {
-    gravity = .75;
-        if(vspeed &gt;= 10){
-            vspeed =10;
-    }
-  
-} else {
-    gravity =0; 
-}
-      /*
+   /*
 //Magic Missile Attack
 if (keyboard_check_pressed(vk_control)) {
 
