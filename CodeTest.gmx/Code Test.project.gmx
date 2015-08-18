@@ -67,7 +67,6 @@
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
-      <object>objects\obj_playerTest2</object>
     </objects>
     <objects name="+ -">
       <object>objects\obj_strMinus</object>
